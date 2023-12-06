@@ -1,7 +1,20 @@
 import './App.css'
+import {useState} from "react";
 
-function Square({value}) {
-    return <button className={'square'}>{value}</button>
+function Square() {
+    const [value, setValue] = useState(null)
+
+    function handelClick() {
+        setValue('X')
+    }
+
+    return (
+        <button
+            className={'square'}
+            onClick={handelClick}
+        >
+            {value}</button>
+    )
 }
 
 export default function App() {
