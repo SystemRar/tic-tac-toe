@@ -6,4 +6,8 @@
 body {
     background-color: #2f2f2f;
     height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
