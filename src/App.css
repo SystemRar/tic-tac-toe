@@ -12,6 +12,9 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #ccc;
+    color: #484848;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 .board-row:nth-child(2) {
@@ -24,6 +27,8 @@
 
 button {
     cursor: pointer;
+    font-family: sans-serif;
+    color: #cccccc;
 }
 
 .status {
@@ -32,4 +37,28 @@ button {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.game {
+    display: flex;
+}
+
+.game-info > ol {
+    margin-top: 50px;
+}
+
+.game-info > ol > li {
+    color: #cccccc;
+    margin-left: 75px;
+    margin-top: 8px;
+}
+
+.game-info > ol > li > button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 3px;
+    background-color: #545454;
+    outline: none;
+    border: 0;
+    border-radius: 3px;
 }
