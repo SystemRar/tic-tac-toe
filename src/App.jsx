@@ -1,6 +1,18 @@
 import './App.css'
 
 import {useMemo, useState} from "react";
+import PropTypes from "prop-types";
+
+Square.propTypes = {
+    value: PropTypes.string,
+    onSquareClick: PropTypes.func
+}
+
+Board.propTypes = {
+    xIsNext: PropTypes.bool,
+    squares: PropTypes.array,
+    onPlay: PropTypes.func
+}
 
 export default function App() {
     const [history, setHistory] = useState([Array(9).fill(null)]);
