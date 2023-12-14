@@ -20,13 +20,13 @@ function Board({ xIsNext, squares, onPlay }) {
         onPlay(nextSquares);
     }
 
-    let status;
-
-    if (winner) {
-        status = `Winner: ${winner}`;
-    } else {
-        status = `Next player: ${xIsNext ? 'X' : 'O'}`;
-    }
+    const status = useMemo(() => {
+        if (winner) {
+            return `Winner: ${winner}`;
+        } else {
+            return `Next player: ${xIsNext ? 'X' : 'O'}`;
+        }
+    }, [winner, xIsNext]);
 
     return (
         <div className="game-board">
