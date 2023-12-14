@@ -8,8 +8,8 @@ function Moves({ setCurrentMove, history }) {
     }
 
     const moves = history.map((squares, move) => {
-        let description;
-        move > 0 ? description = `Go to move #${move}` : description = 'Go to game start';
+        const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
+
         return (
             <li key={move}>
                 <button onClick={() => jumpTo(move)}>{description}</button>
