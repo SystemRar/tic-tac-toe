@@ -1,38 +1,21 @@
 import './Board.css';
 
+import PropTypes from "prop-types";
 import {useMemo} from "react";
 
+import calculateWinner from "../../scripts/calculateWinner.js";
 import Square from "../Square/Square.jsx";
-import PropTypes from "prop-types";
 
 function Board({ xIsNext, squares, onPlay }) {
-    const winner = useMemo(() => {
-        const lines = [
-            [0, 1, 2],
-            [3, 4, 5],
-            [6, 7, 8],
-            [0, 3, 6],
-            [1, 4, 7],
-            [2, 5, 8],
-            [0, 4, 8],
-            [2, 4, 6]
-        ];
-        for (let i = 0; i < lines.length; i++) {
-            const [a, b, c] = lines[i];
-            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                return squares[a];
-            }
-        }
-        return null;
-    }, [squares]);
+    const winner = useMemo(() => calculateWinner(squares), [squares]);
 
-    function handleClick(i) {
-        if (squares[i] || winner) {
+    function handleClick(number) {
+        if (squares[number] || winner) {
             return;
         }
 
         const nextSquares = squares.slice();
-        xIsNext ? nextSquares[i] = 'X' : nextSquares[i] = 'O';
+        xIsNext ? nextSquares[number] = 'X' : nextSquares[number] = 'O';
 
         onPlay(nextSquares);
     }
