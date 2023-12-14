@@ -26,16 +26,6 @@ export default function App() {
     )
 }
 
-function Square({ value, onSquareClick }) {
-    return (
-        <button
-            className={'square'}
-            onClick={onSquareClick}
-        >
-            {value}</button>
-    )
-}
-
 function Board({ xIsNext, squares, onPlay }) {
     const winner = useMemo(() => {
         const lines = [
@@ -96,11 +86,6 @@ function Board({ xIsNext, squares, onPlay }) {
             </div>
         </>
     )
-}
-
-Square.propTypes = {
-    value: PropTypes.string,
-    onSquareClick: PropTypes.func
 }
 
 Board.propTypes = {
