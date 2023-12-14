@@ -122,6 +122,6 @@ Square.propTypes = {
 
 Board.propTypes = {
     xIsNext: PropTypes.bool,
-    squares: PropTypes.array,
+    squares: PropTypes.arrayOf(PropTypes.string),
     onPlay: PropTypes.func
 }
