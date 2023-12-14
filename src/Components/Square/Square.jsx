@@ -1,3 +1,5 @@
+import './Square.css';
+
 import PropTypes from "prop-types";
 
 function Square({ value, onSquareClick }) {
