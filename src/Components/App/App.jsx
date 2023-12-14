@@ -2,6 +2,7 @@ import './App.css'
 
 import {useMemo, useState} from "react";
 import PropTypes from "prop-types";
+import Moves from "../Moves/Moves.jsx";
 
 export default function App() {
     const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -15,30 +16,12 @@ export default function App() {
         setCurrentMove(nextHistory.length - 1);
     }
 
-    function jumpTo(nextMove) {
-        setCurrentMove(nextMove);
-    }
-
-    const moves = history.map((squares, move) => {
-        let description;
-        move > 0 ? description = `Go to move #${move}` : description = 'Go to game start';
-        return (
-            <li key={move}>
-                <button onClick={() => jumpTo(move)}>{description}</button>
-            </li>
-        );
-    })
-
     return (
         <div className={'game'}>
             <div className="game-board">
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay}/>
             </div>
-            <div className="game-info">
-                <ol>
-                    {moves}
-                </ol>
-            </div>
+            <Moves setCurrentMove={setCurrentMove} history={history}/>
         </div>
     )
 }
