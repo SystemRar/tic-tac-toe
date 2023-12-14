@@ -1,5 +1,7 @@
 import './Moves.css';
 
+import PropTypes from "prop-types";
+
 function Moves({ setCurrentMove, history }) {
     function jumpTo(nextMove) {
         setCurrentMove(nextMove);
@@ -22,6 +24,11 @@ function Moves({ setCurrentMove, history }) {
             </ol>
         </div>
     )
+}
+
+Moves.propTypes = {
+    setCurrentMove: PropTypes.func,
+    history: PropTypes.arrayOf(PropTypes.array)
 }
 
 export default Moves;
