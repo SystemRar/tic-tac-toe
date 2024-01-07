@@ -1,19 +1,24 @@
-.game-info > ol {
+.gameInfo > ol {
     margin-top: 50px;
 }
 
-.game-info > ol > li {
+.gameInfo > ol > li {
     color: #cccccc;
+
     margin-left: 75px;
     margin-top: 8px;
 }
 
-.game-info > ol > li > button {
+.gameInfo > ol > li > button {
     width: 100%;
-    font-size: 1rem;
     padding: 3px;
+
     background-color: #545454;
+
     outline: none;
+    color: #cccccc;
+    font-size: 1rem;
+
     border: 0;
     border-radius: 3px;
 }
